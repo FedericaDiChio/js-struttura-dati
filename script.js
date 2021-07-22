@@ -14,9 +14,10 @@ const card = {
     // possiamo avere più di una abilità quindi creiamo un array
     abilities: [
         { 
-            ability: ["Volare", "velocità"],
+            ability: ["Volare", "velocità"], //> separate o vicine?//
             description: "qualcosa"
         },
+        // nel caso ci fossero altre abilità 
         {
             ability: "ci sarà sicuro un'altra abilità figa, tipo sputa fuoco",
             description: "qualcosa"
@@ -42,9 +43,6 @@ const card = {
 console.table(card)
 
 
-// STAMPIAMO IN PAGINA 
+// Recuperiamo l'elemento HTML 
+const displayCard = document.getElementById("display-card");
 
-let cardTemplate = 
-`<ul>
-    <li></li>
-</ul>`
