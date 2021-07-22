@@ -11,15 +11,41 @@ const card = {
     subtype: "Drago",
     // dividiamo il testo centrale in due oggetti 
     flavourText: {
-        quote: ""
+        quote: "volooo"
     },
     // possiamo avere più di una abilità quindi creiamo un array
     abilities: [
-
-    ]
+        { 
+            ability: ["Volare", "velocità"],
+            description: "qualcosa"
+        },
+        {
+            ability: "ci sarà sicuro un'altra abilità figa, tipo sputa fuoco",
+            description: "qualcosa"
+        }
+    ], 
+    // !RIVEDERE ABILITIES//
+    illustrator: {
+        id: 5,
+        name: "Daarken"
+    },
+    collectionNumber: {
+        cardNumber: 126,
+        cardTotal: 350
+    },
+    strenght: 4,
+    constitution: 4
     
-
-       
-
+    //!RIVEDERE BORDER COLOR E FARE ESPANSIONE//
+    // BorderColor: 
+    
 }
 console.table(card)
+
+
+// STAMPIAMO IN PAGINA 
+
+let cardTemplate = 
+`<ul>
+    <li></li>
+</ul>`
