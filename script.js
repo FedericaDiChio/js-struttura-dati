@@ -29,7 +29,6 @@ const card = {
         },
     ], 
     flavourText: "Volooo",
-    // !RIVEDERE ABILITIES//
     illustrator: {
         id: 5,   //l'ID può essere utile nella ricerca filtrata//
         name: "Daarken"
@@ -38,10 +37,7 @@ const card = {
     cardTotal: 244,
     strenght: 4,
     constitution: 4,
-    
-    //!RIVEDERE BORDER COLOR//
     borderColor: "Nero",
-    
 }
 console.table(card)
 
@@ -108,3 +104,5 @@ let cardTemplate =
 
 
 displayCard.innerHTML = cardTemplate; 
+
+
