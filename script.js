@@ -6,7 +6,7 @@ creando la struttura che riteniamo più adeguata per rappresentare una carta di 
 const card = {
     id: 1,
     name: "Drago dalle Ali ad Arco",
-    // Creiamo un array perchè il costo di lancio si compone di più elementi 
+    // Creiamo un array perchè il costo di lancio si compone di più elementi// 
     manaCost: ["2", "R", "R"],
     typeOfCard: "Creatura",
     subtype: "Drago",
@@ -15,16 +15,16 @@ const card = {
         rarityColor: "Golden - raro",
         reprint: 1,
     }, 
-    // dividiamo il testo centrale in due oggetti 
-    // possiamo avere più di una abilità quindi creiamo un array
+    // dividiamo il testo centrale in due oggetti// 
+    // possiamo avere più di una abilità quindi creiamo un array//
     abilities: [
         { 
             ability: ["Volo", "rapidità"], //> separate o vicine?//
             description: "Qualcosa",
         },
-        // nel caso ci fossero altre abilità 
+        // nel caso ci fossero altre abilità// 
         {
-            ability: ["Sputafuoco", "alito pesante"],
+            ability: ["Sputafuoco", "alito velenoso"],
             description: "Qualcosa",
         },
     ], 
@@ -43,10 +43,10 @@ console.table(card)
 
 
 
-// COSE FUORI DAL TEMPLATE
+// COSE FUORI DAL TEMPLATE (migliorare commento)
 
-/* 1.Dobbiamo considerare che non tutte le carte hanno abilità. 
-Nel caso in cui non ci fossero, comunichiamolo al giocatore*/
+/* 1. Dobbiamo considerare che non tutte le carte hanno abilità. 
+    Nel caso in cui non ci fossero, comunichiamolo al giocatore */
 let abilitiesContent = "<em>Questa è una carta Vanilla, non è in possesso di alcuna abilità!</em>";
 if (card.abilities.length) {
     abilitiesContent = "<ul>";
@@ -58,10 +58,11 @@ if (card.abilities.length) {
 } abilitiesContent += "</ul>";
 
 
-/* 2.Consideriamo che anche il Flavour Text + qualcosa che non tutte le carte hanno, come le abilities*/
+
+// 2. Consideriamo che anche il Flavour Text è qualcosa che non tutte le carte hanno, proprio come le abilities //
 const cardFlavourText = card.flavourText ? `<li><strong>Testo di colore: </strong> ${card.flavourText};` : " ";
 
-/* 3.Consideriamo che non tutte le carte hanno un sottotipo*/
+// 3. Consideriamo che non tutte le carte hanno un sottotipo //
 const cardSubtype = card.subtype ? ` - <strong>Sottotipo: </strong> ${card.subtype}` : "";
 
 /* Questo equivale a fare
@@ -70,13 +71,16 @@ if(card.subtype) {
 } else {
     subtype = "";
 }
+
 (card.subtype !== undefined)
 */
+
+
 
 // Recuperiamo l'elemento HTML 
 const displayCard = document.getElementById("display-card");
 
-// Stampiamo in pagina 
+// Stampiamo in pagina //
 let cardTemplate = 
 `<ul>
     <li><strong>Id Carta: </strong>${card.id};</li>
@@ -101,7 +105,6 @@ let cardTemplate =
     <li><strong>Forza e Costituzione: </strong>${card.strenght}/${card.constitution};
     <li><strong>Bordo della carta: </strong>${card.borderColor};
 </ul>`
-
 
 displayCard.innerHTML = cardTemplate; 
 
