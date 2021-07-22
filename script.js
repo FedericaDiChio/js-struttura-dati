@@ -4,6 +4,7 @@ creando la struttura che riteniamo più adeguata per rappresentare una carta di 
 
 
 const card = {
+    id: 1,
     name: "Drago dalle Ali ad Arco",
     // Creiamo un array perchè il costo di lancio si compone di più elementi 
     manaCost: ["2", "R", "R"],
@@ -26,13 +27,11 @@ const card = {
     ], 
     // !RIVEDERE ABILITIES//
     illustrator: {
-        id: 5,
+        id: 5,   //l'ID può essere utile nella ricerca filtrata//
         name: "Daarken"
     },
-    collectionNumber: {
-        cardNumber: 126,
-        cardTotal: 350
-    },
+    cardNumber: 126,
+    cardTotal: 350,
     strenght: 4,
     constitution: 4
     
