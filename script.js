@@ -15,16 +15,16 @@ const card = {
     abilities: [
         { 
             ability: ["Volare", "velocità"], //> separate o vicine?//
-            description: "qualcosa"
+            description: "Qualcosa"
         },
         // nel caso ci fossero altre abilità 
         {
-            ability: "ci sarà sicuro un'altra abilità figa, tipo sputa fuoco",
-            description: "qualcosa"
+            ability: "Ci sarà sicuro un'altra abilità figa, tipo sputa fuoco",
+            description: "Qualcosa"
         }
     ], 
     flavourText: {
-        quote: "volooo"
+        quote: "Volooo"
     },
     // !RIVEDERE ABILITIES//
     illustrator: {
@@ -49,8 +49,20 @@ const displayCard = document.getElementById("display-card");
 // Stampiamo in pagina 
 let cardTemplate = 
 `<ul>
-    <li> <strong>Id:</strong> ${card.id};</li>
-    <li> <strong>Nome:</strong> ${card.name};</li>
+    <li><strong>Id Carta: </strong>${card.id};</li>
+    <li><strong>Nome: </strong>${card.name};</li>
+    <li><strong>Costo di lancio: </strong>${card.manaCost.join(", ")};</li>
+    <li><strong>Tipo di carta: </strong>${card.typeOfCard};</li>
+
+    <li><strong>Testo di colore: </strong>${card.flavourText.quote};</li>
+    <li><strong>Illustratore: </strong>
+        <ul>
+            <li><strong>Nome: </strong> ${card.illustrator.name};</li>
+            <li><strong>Id: </strong>${card.illustrator.id};</li>
+        </ul>     
+    </li>
+
+
 </ul>`
 
 
