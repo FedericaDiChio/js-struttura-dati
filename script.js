@@ -24,7 +24,7 @@ const card = {
         },
         // nel caso ci fossero altre abilità 
         {
-            ability: "Ci sarà sicuro un'altra abilità figa, tipo sputa fuoco;",
+            ability: "Ci sarà sicuro un'altra abilità figa, tipo sputa fuoco",
             description: "Qualcosa",
         },
     ], 
@@ -63,6 +63,19 @@ if (card.abilities.length) {
 } abilitiesContent += `</ul>`;
 
 
+/* 2.Consideriamo che non tutte le carte hanno un sottotipo*/
+const cardSubtype = card.subtype ? ` - <strong>Sottotipo: </strong> ${card.subtype}` : "";
+
+/* Questo equivale a fare
+if(card.subtype) {
+    subtype = card.subtype;
+} else {
+    subtype = "";
+}
+
+(card.subtype !== undefined)
+*/
+
 
 
 // Recuperiamo l'elemento HTML 
@@ -72,7 +85,8 @@ const displayCard = document.getElementById("display-card");
 let cardTemplate = 
 `<ul>
     <li><strong>Id Carta: </strong>${card.id};</li>
-    <li><strong>Nome: </strong>${card.name};</li>
+    <li><strong>Nome: </strong>${card.name}${cardSubtype};</li>
+    
     <li><strong>Costo di lancio: </strong>${card.manaCost.join(", ")};</li>
     <li><strong>Tipo di carta: </strong>${card.typeOfCard};</li>
     <li><strong>Espansione: </strong>
