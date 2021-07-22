@@ -12,7 +12,7 @@ const card = {
     subtype: "Drago",
     expansion: {
         name: "Avacyn Restored",
-        rarityColor: "golden",
+        rarityColor: "Golden - raro",
         reprint: 1,
     }, 
     // dividiamo il testo centrale in due oggetti 
@@ -24,7 +24,7 @@ const card = {
         },
         // nel caso ci fossero altre abilità 
         {
-            ability: "Ci sarà sicuro un'altra abilità figa, tipo sputa fuoco",
+            ability: ["Sputafuoco", "alito pesante"],
             description: "Qualcosa",
         },
     ], 
@@ -40,7 +40,7 @@ const card = {
     constitution: 4,
     
     //!RIVEDERE BORDER COLOR//
-    borderColor: "nero",
+    borderColor: "Nero",
     
 }
 console.table(card)
@@ -51,18 +51,21 @@ console.table(card)
 
 /* 1.Dobbiamo considerare che non tutte le carte hanno abilità. 
 Nel caso in cui non ci fossero, comunichiamolo al giocatore*/
-let abilitiesContent = "Questa è una carta Vanilla, non è in possesso di alcuna abilità!"
+let abilitiesContent = "<em>Questa è una carta Vanilla, non è in possesso di alcuna abilità!</em>";
 if (card.abilities.length) {
-    abilitiesContent = `<ul>`;
+    abilitiesContent = "<ul>";
     for (let i = 0; i < card.abilities.length; i++){
         const currentAbility = card.abilities[i];
-        abilitiesContent += `<li><strong>Tipo di abilità: </strong>${currentAbility.ability};</li>`;
+        abilitiesContent += `<li><strong>Tipo di abilità: </strong>${currentAbility.ability.join(", ")};</li>`;
         abilitiesContent += `<li><strong>Descrizione: </strong>${currentAbility.description};</li>`
     }
-} abilitiesContent += `</ul>`;
+} abilitiesContent += "</ul>";
 
 
-/* 2.Consideriamo che non tutte le carte hanno un sottotipo*/
+/* 2.Consideriamo che anche il Flavour Text + qualcosa che non tutte le carte hanno, come le abilities*/
+const cardFlavourText = card.flavourText ? `<li><strong>Testo di colore: </strong> ${card.flavourText};` : " ";
+
+/* 3.Consideriamo che non tutte le carte hanno un sottotipo*/
 const cardSubtype = card.subtype ? ` - <strong>Sottotipo: </strong> ${card.subtype}` : "";
 
 /* Questo equivale a fare
@@ -71,13 +74,8 @@ if(card.subtype) {
 } else {
     subtype = "";
 }
-
 (card.subtype !== undefined)
 */
-
-/*3.Consideriamo che anche il Flavour Text + qualcosa che non tutte le carte hanno, come le abilities*/
-const cardFlavourText = card.flavourText ? `<li><strong>Testo di colore: </strong> ${card.flavourText};` : " ";
-
 
 // Recuperiamo l'elemento HTML 
 const displayCard = document.getElementById("display-card");
@@ -86,9 +84,9 @@ const displayCard = document.getElementById("display-card");
 let cardTemplate = 
 `<ul>
     <li><strong>Id Carta: </strong>${card.id};</li>
-    <li><strong>Nome: </strong>${card.name}${cardSubtype};</li>
+    <li><strong>Nome: </strong><em>${card.name};</em></li>
     <li><strong>Costo di lancio: </strong>${card.manaCost.join(", ")};</li>
-    <li><strong>Tipo di carta: </strong>${card.typeOfCard};</li>
+    <li><strong>Tipo di carta: </strong>${card.typeOfCard}${cardSubtype};</li>
     <li><strong>Espansione: </strong>
         <ul>
             <li><strong>Nome: </strong>${card.expansion.name};</li>
