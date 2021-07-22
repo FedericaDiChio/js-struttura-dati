@@ -11,9 +11,6 @@ const card = {
     typeOfCard: "Creatura",
     subtype: "Drago",
     // dividiamo il testo centrale in due oggetti 
-    flavourText: {
-        quote: "volooo"
-    },
     // possiamo avere più di una abilità quindi creiamo un array
     abilities: [
         { 
@@ -25,6 +22,9 @@ const card = {
             description: "qualcosa"
         }
     ], 
+    flavourText: {
+        quote: "volooo"
+    },
     // !RIVEDERE ABILITIES//
     illustrator: {
         id: 5,   //l'ID può essere utile nella ricerca filtrata//
