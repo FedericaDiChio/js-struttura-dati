@@ -46,3 +46,12 @@ console.table(card)
 // Recuperiamo l'elemento HTML 
 const displayCard = document.getElementById("display-card");
 
+// Stampiamo in pagina 
+let cardTemplate = 
+`<ul>
+    <li> <strong>Id:</strong> ${card.id};</li>
+    <li> <strong>Nome:</strong> ${card.name};</li>
+</ul>`
+
+
+displayCard.innerHTML = cardTemplate;
