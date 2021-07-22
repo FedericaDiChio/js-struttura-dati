@@ -28,9 +28,7 @@ const card = {
             description: "Qualcosa",
         },
     ], 
-    flavourText: {
-        quote: "Volooo"
-    },
+    flavourText: "Volooo",
     // !RIVEDERE ABILITIES//
     illustrator: {
         id: 5,   //l'ID può essere utile nella ricerca filtrata//
@@ -39,13 +37,14 @@ const card = {
     cardNumber: 126,
     cardTotal: 244,
     strenght: 4,
-    constitution: 4
+    constitution: 4,
     
     //!RIVEDERE BORDER COLOR//
-    // BorderColor: 
+    borderColor: "nero",
     
 }
 console.table(card)
+
 
 
 // COSE FUORI DAL TEMPLATE
@@ -76,6 +75,8 @@ if(card.subtype) {
 (card.subtype !== undefined)
 */
 
+/*3.Consideriamo che anche il Flavour Text + qualcosa che non tutte le carte hanno, come le abilities*/
+const cardFlavourText = card.flavourText ? `<li><strong>Testo di colore: </strong> ${card.flavourText};` : " ";
 
 
 // Recuperiamo l'elemento HTML 
@@ -86,7 +87,6 @@ let cardTemplate =
 `<ul>
     <li><strong>Id Carta: </strong>${card.id};</li>
     <li><strong>Nome: </strong>${card.name}${cardSubtype};</li>
-    
     <li><strong>Costo di lancio: </strong>${card.manaCost.join(", ")};</li>
     <li><strong>Tipo di carta: </strong>${card.typeOfCard};</li>
     <li><strong>Espansione: </strong>
@@ -96,17 +96,16 @@ let cardTemplate =
             <li><strong>Ristampa: </strong>${card.expansion.reprint};</li>
         </ul>
         <li><strong>Abilità: </strong>${abilitiesContent}</li>  
-        <li><strong>Testo di colore: </strong>${card.flavourText.quote};</li>
+        ${cardFlavourText}
     <li><strong>Illustratore: </strong>
         <ul>
             <li><strong>Nome: </strong>${card.illustrator.name};</li>
             <li><strong>Id: </strong>${card.illustrator.id};</li>
         </ul>     
     </li>
-
     <li><strong>Numero Collezione: </strong>${card.cardNumber}/${card.cardTotal};
     <li><strong>Forza e Costituzione: </strong>${card.strenght}/${card.constitution};
-
+    <li><strong>Bordo della carta: </strong>${card.borderColor};
 </ul>`
 
 
