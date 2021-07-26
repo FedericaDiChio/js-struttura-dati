@@ -155,6 +155,7 @@ const createCardTemplate = (card) => {
     */
         
     // Stampiamo in pagina //
+
     const cardTemplate = 
     `<ul>
         <li><strong>Id Carta: </strong>${card.id};</li>
@@ -198,3 +199,24 @@ const renderDeck = (deck, targetElement) => {
 // Recuperiamo l'elemento HTML e stampiamo in pagina
 const displayCard = document.getElementById("display-card");
 renderDeck(deck, displayCard);
+
+
+// FILTRO
+const inputField = document.getElementById("search");
+const selectField =  document.getElementById("Filter");
+const buttonField = document.getAnimations("btn");
+
+Button.addEventListener("click"), () => {
+    const selectValue = selectField.value;
+    const inputValue = inputField.value;
+    
+
+    const filtered = [];
+for (let i = 0; i < deck.length; i++) {
+    const currentCard = deck[i];
+    if(currentCard[selectField] == inputValue {
+        filtered.push(currentCard)
+        }
+  
+}
+}
