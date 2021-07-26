@@ -216,10 +216,7 @@ button.addEventListener("click", () => {
   
     switch(selectValue) {
         case "id":
-        case "name":
         case "convertedManaCost":
-        case "typeofCard":
-        case "subtype":
         case "strenght":
         case "constitution":
             if (currentCard[selectValue] == inputValue) {
