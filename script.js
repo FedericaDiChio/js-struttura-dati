@@ -48,7 +48,7 @@ const deck = [
 
 
 // FUNCTION 
-// Creiamo una funzione per stampare in pagina 
+
 const createCardTemplate = (card) => {
 
 /* 1. Dobbiamo considerare che non tutte le carte hanno abilità. 
@@ -111,16 +111,17 @@ const createCardTemplate = (card) => {
 } 
 
 
-// Recuperiamo l'elemento HTML 
-const displayCard = document.getElementById("display-card");
-
-// Giriamo nell'array 
-// Variabile di appoggio 
-let deckTemplate = "";
-for (let i = 0; i < deck.length; i++) {
-    const currentCard = deck[i];
-    deckTemplate += createCardTemplate(currentCard);
+const renderDeck = (deck, targetElement) => {
+    // Giriamo nell'array 
+    // Variabile di appoggio 
+    let deckTemplate = "";
+    for (let i = 0; i < deck.length; i++) {
+        const currentCard = deck[i];
+        deckTemplate += createCardTemplate(currentCard);
+    }
+    targetElement.innerHTML = deckTemplate; 
 }
 
-displayCard.innerHTML = deckTemplate; 
-//**TO DO: FUNZIONE**// 
+// Recuperiamo l'elemento HTML e stampiamo in pagina
+const displayCard = document.getElementById("display-card");
+renderDeck(deck, displayCard);

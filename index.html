@@ -6,7 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body> 
+    <select id="filter">
+        <option selected value="all">Tutte</option>
+        <option value="id">Id</option>
+        <option value="name">Nome</option>
+        <option value="manaCost">Costo di lancio</option>
+        <option value="typeOfCard">Tipo di carta</option>
+        <option value="subtype">Sottotipo</option>
+        <option value="strenght">Forza</option>
+        <option value="constitution">Costituzione</option>
+    </select>
+    <input type="text" id="search">Cerca</input>
     <div id="display-card"></div>
     <script src="./script.js"></script>
 </body>
