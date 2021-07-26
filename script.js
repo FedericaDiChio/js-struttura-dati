@@ -45,7 +45,7 @@ const deck = [
 },
 {
     id: 2,
-    name: "Tymna the Weaver",
+    name: "Tymna la tessitrice",
     // Creiamo un array perchè il costo di lancio si compone di più elementi// 
     manaCost: ["1", "W", "B"],
     mcm: 1,
@@ -203,20 +203,35 @@ renderDeck(deck, displayCard);
 
 // FILTRO
 const inputField = document.getElementById("search");
-const selectField =  document.getElementById("Filter");
-const buttonField = document.getAnimations("btn");
+const selectField =  document.getElementById("filter");
+const button = document.getElementById("btn");
 
-Button.addEventListener("click"), () => {
+button.addEventListener("click", () => {
     const selectValue = selectField.value;
     const inputValue = inputField.value;
     
-
     const filtered = [];
-for (let i = 0; i < deck.length; i++) {
+    for (let i = 0; i < deck.length; i++) {
     const currentCard = deck[i];
-    if(currentCard[selectField] == inputValue {
-        filtered.push(currentCard)
-        }
   
-}
-}
+    switch(selectValue) {
+        case "id":
+        case "name":
+        case "convertedManaCost":
+        case "typeofCard":
+        case "subtype":
+        case "strenght":
+        case "constitution":
+            if (currentCard[selectValue] == inputValue) {
+                filtered.push(currentCard);
+            };
+        break;
+        default:
+            if (currentCard[selectValue].includes(inputValue)) {
+                filtered.push(currentCard)
+            }
+        
+    }
+} 
+renderDeck(filtered, displayCard);
+});
