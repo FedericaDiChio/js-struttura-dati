@@ -6,12 +6,12 @@ creando la struttura che riteniamo più adeguata per rappresentare una carta di 
 // Creiamo un array di oggetti per gestire un mazzo di carte 
 //**AGGIUNGERE ALTRE CARTE*/
 const deck = [
-    
- {
+  {
     id: 1,
     name: "Drago dalle Ali ad Arco",
     // Creiamo un array perchè il costo di lancio si compone di più elementi// 
     manaCost: ["2", "R", "R"],
+    mcm: 4,
     typeOfCard: "Creatura",
     subtype: "Drago",
     expansion: {
@@ -42,7 +42,80 @@ const deck = [
     strenght: 4,
     constitution: 4,
     borderColor: "Nero",
-}
+},
+{
+    id: 2,
+    name: "Tymna the Weaver",
+    // Creiamo un array perchè il costo di lancio si compone di più elementi// 
+    manaCost: ["1", "W", "B"],
+    mcm: 1,
+    typeOfCard: "Creatura Leggendaria",
+    subtype: "Chierico Umano",
+    expansion: {
+        name: "Commander 2016",
+        rarityColor: "Golden - raro",
+        reprint: 5,
+    }, 
+    // dividiamo il testo centrale in due oggetti// 
+    // possiamo avere più di una abilità quindi creiamo un array//
+    abilities: [
+        { 
+            ability: ["Legame Vitale"], //> separate o vicine?//
+            description: "Qualcosa",
+        },
+        // nel caso ci fossero altre abilità// 
+        {
+            ability: [""],
+            description: "",
+        },
+    ], 
+    illustrator: {
+        id: 2,   //l'ID può essere utile nella ricerca filtrata//
+        name: "Winona Nelson"
+    },
+    cardNumber: 48,
+    cardTotal: 120,
+    strenght: 2,
+    constitution: 2,
+    borderColor: "Nero",
+},
+{
+    id: 2,
+    name: "Felidar a caccia",
+    // Creiamo un array perchè il costo di lancio si compone di più elementi// 
+    manaCost: ["3", "W"],
+    mcm: 8,
+    typeOfCard: "Creatura",
+    subtype: "Bestia felino",
+    expansion: {
+        name: "Zendikar Rising",
+        rarityColor: "Black - comune",
+        reprint: 20,
+    }, 
+    // dividiamo il testo centrale in due oggetti// 
+    // possiamo avere più di una abilità quindi creiamo un array//
+    abilities: [
+        { 
+            ability: ["Cautela"], //> separate o vicine?//
+            description: "Qualcosa",
+        },
+        // nel caso ci fossero altre abilità// 
+        {
+            ability: [""],
+            description: "",
+        },
+    ], 
+    flavourText: "i Felidar lasciano doni",
+    illustrator: {
+        id: 8,   //l'ID può essere utile nella ricerca filtrata//
+        name: "Ilse Gort"
+    },
+    cardNumber: 34,
+    cardTotal: 380,
+    strenght: 2,
+    constitution: 3,
+    borderColor: "Nero",
+},
 ]
 
 
