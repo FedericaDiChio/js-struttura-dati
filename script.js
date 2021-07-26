@@ -121,7 +121,7 @@ const deck = [
 
 
 // FUNCTION 
-
+// Crare il template della card 
 const createCardTemplate = (card) => {
 
 /* 1. Dobbiamo considerare che non tutte le carte hanno abilità. 
@@ -154,7 +154,7 @@ const createCardTemplate = (card) => {
     (card.subtype !== undefined)
     */
         
-    // Stampiamo in pagina //
+ 
 
     const cardTemplate = 
     `<ul>
@@ -184,9 +184,8 @@ const createCardTemplate = (card) => {
     return cardTemplate;
 } 
 
-
+// Giriamo nell'array 
 const renderDeck = (deck, targetElement) => {
-    // Giriamo nell'array 
     // Variabile di appoggio 
     let deckTemplate = "";
     for (let i = 0; i < deck.length; i++) {
