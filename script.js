@@ -3,7 +3,11 @@ Proviamo a ripetere quanto visto in classe,
 creando la struttura che riteniamo più adeguata per rappresentare una carta di Magic.*/
 
 
-const card = {
+// Creiamo un array di oggetti per gestire un mazzo di carte 
+//**AGGIUNGERE ALTRE CARTE*/
+const deck = [
+    
+ {
     id: 1,
     name: "Drago dalle Ali ad Arco",
     // Creiamo un array perchè il costo di lancio si compone di più elementi// 
@@ -39,10 +43,11 @@ const card = {
     constitution: 4,
     borderColor: "Nero",
 }
-console.table(card)
+]
 
 
 
+// FUNCTION 
 // Creiamo una funzione per stampare in pagina 
 const createCardTemplate = (card) => {
 
@@ -109,7 +114,13 @@ const createCardTemplate = (card) => {
 // Recuperiamo l'elemento HTML 
 const displayCard = document.getElementById("display-card");
 
-const cardTemplate = createCardTemplate(card);
+// Giriamo nell'array 
+// Variabile di appoggio 
+let deckTemplate = "";
+for (let i = 0; i < deck.length; i++) {
+    const currentCard = deck[i];
+    deckTemplate += createCardTemplate(currentCard);
+}
 
-displayCard.innerHTML = cardTemplate; 
-
+displayCard.innerHTML = deckTemplate; 
+//**TO DO: FUNZIONE**// 
